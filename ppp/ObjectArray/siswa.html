@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Siswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-light">
+    <div class="container py-4">
+      <h2 class="text-center mb-4">📋 Daftar Siswa</h2>
+
+      <table class="table table-striped table-bordered">
+        <thead class="table-primary text-center">
+          <tr>
+            <th>No</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Umur</th>
+            <th>Jurusan</th>
+          </tr>
+        </thead>
+        <tbody id="tabelSiswa"></tbody>
+      </table>
+    </div>
+
+    <script>
+      let siswa = [
+        {
+          nama: "Budi Santoso",
+          umur: 17,
+          jurusan: "IPA",
+          foto: "https://randomuser.me/api/portraits/men/10.jpg",
+        },
+        {
+          nama: "Siti Rahma",
+          umur: 16,
+          jurusan: "IPS",
+          foto: "https://randomuser.me/api/portraits/women/8.jpg",
+        },
+        {
+          nama: "Agus Pratama",
+          umur: 17,
+          jurusan: "TKJ",
+          foto: "https://randomuser.me/api/portraits/men/12.jpg",
+        },
+        {
+          nama: "Dewi Lestari",
+          umur: 16,
+          jurusan: "RPL",
+          foto: "https://randomuser.me/api/portraits/women/13.jpg",
+        },
+        {
+          nama: "Rian Saputra",
+          umur: 17,
+          jurusan: "Akuntansi",
+          foto: "https://randomuser.me/api/portraits/men/14.jpg",
+        },
+      ];
+
+      let tabel = document.getElementById("tabelSiswa");
+
+      siswa.forEach((s, index) => {
+        let row = `
+          <tr>
+            <td class="text-center">${index + 1}</td>
+            <td class="text-center">
+              <img src="${s.foto}" width="70" height="70" class="rounded-circle">
+            </td>
+            <td>${s.nama}</td>
+            <td class="text-center">${s.umur}</td>
+            <td>${s.jurusan}</td>
+          </tr>
+        `;
+        tabel.innerHTML += row;
+      });
+    </script>
+  </body>
+</html>

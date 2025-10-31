@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Siswa</title>
+  </head>
+  <body>
+    <h2>Data Nilai Siswa</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Umur</th>
+          <th>Matematika</th>
+          <th>Bahasa</th>
+        </tr>
+      </thead>
+      <tbody id="data-siswa"></tbody>
+    </table>
+
+    <script>
+      let sekolah = {
+        nama: "SMA 1 Indramayu",
+        alamat: "Jl. Merdeka No. 10",
+        siswa: [
+          { nama: "Budi", umur: 17, nilai: { matematika: 85, bahasa: 90 } },
+          { nama: "Ani", umur: 16, nilai: { matematika: 92, bahasa: 88 } },
+          { nama: "Cici", umur: 17, nilai: { matematika: 78, bahasa: 95 } },
+        ],
+      };
+
+      let tbody = document.getElementById("data-siswa");
+
+      sekolah.siswa.forEach(function (item) {
+        let row = `
+        <tr>
+          <td>${item.nama}</td>
+          <td>${item.umur} tahun</td>
+          <td>${item.nilai.matematika}</td>
+          <td>${item.nilai.bahasa}</td>
+        </tr>
+      `;
+        tbody.innerHTML += row;
+      });
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

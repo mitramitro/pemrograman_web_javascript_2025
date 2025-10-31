@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kalkulator</title>
+  </head>
+  <body>
+    <input type="text" id="screen" readonly style="text-align: right" /> <br />
+    <button onclick="tambahAngka(1)">1</button>
+    <button onclick="tambahAngka(2)">2</button>
+    <button onclick="tambahAngka(3)">3</button> <br />
+    <button onclick="operator('+')">+</button>
+    <button>*</button>
+    <button onclick="hitung()">=</button>
+    <button onclick="clearScreen()">C</button>
+  </body>
+
+  <script>
+    let nilai1 = "";
+    let nilai2 = "";
+    let opr = "";
+
+    function tambahAngka(angkaDariTombol) {
+      document.getElementById("screen").value += angkaDariTombol;
+    }
+    function operator(opDariTombol) {
+      nilai1 = document.getElementById("screen").value;
+      opr = opDariTombol;
+      document.getElementById("screen").value = "";
+    }
+
+    function hitung() {
+      nilai2 = document.getElementById("screen").value;
+      let hasil = 0;
+      switch (opr) {
+        case "+":
+          hasil = parseInt(nilai1) + parseInt(nilai2);
+          break;
+        case "-":
+          hasil = parseInt(nilai1) - parseInt(nilai2);
+          break;
+      }
+      console.log(nilai2);
+      document.getElementById("screen").value = hasil;
+    }
+
+    function clearScreen() {
+      nilai1 = "";
+      nilai2 = "";
+      opt = "";
+      document.getElementById("screen").value = "";
+    }
+  </script>
+</html>

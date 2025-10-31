@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <div id="produkContainer"></div>
+    <script>
+      fetch("https://dummyjson.com/products")
+        // .then((res) => res.json())
+        .then(function (res) {
+          return res.json();
+        })
+        .then((data) => {
+          let container = document.getElementById("produkContainer");
+
+          data.products.forEach((item) => {
+            container.innerHTML += `
+        <div class="col-md-3">
+          <div class="card">
+            <img src="${item.thumbnail}" class="card-img-top">
+            <div class="card-body">
+              <h5>${item.title}</h5>
+              <p>${item.price} USD</p>
+            </div>
+          </div>
+        </div>
+      `;
+          });
+        });
+
+      //   let siswa = { nama: "Budi", umur: 17 };
+      //   let jsonText = JSON.stringify(siswa);
+      //   console.log(jsonText); //{"nama":"Budi","umur":17}
+
+      //   let obj = JSON.parse(jsonText);
+      //   console.log(obj);
+    </script>
+  </body>
+</html>

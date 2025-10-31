@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+  </head>
+  <body>
+    <input type="text" id="screen" style="text-align: right" readonly /> <br />
+    <button onclick="tambahAngka(1)">1</button>
+    <button onclick="tambahAngka(2)">2</button>
+    <button onclick="tambahAngka(3)">3</button> <br />
+    <button onclick="tambahAngka(4)">4</button>
+    <button onclick="tambahAngka(5)">5</button>
+    <button onclick="tambahAngka(6)">6</button> <br />
+    <button onclick="tambahAngka(7)">7</button>
+    <button onclick="tambahAngka(8)">8</button>
+    <button onclick="tambahAngka(9)">9</button> <br />
+    <button onclick="tambahAngka(0)">0</button>
+
+    <button onclick="operator('+')">+</button>
+    <button onclick="operator('-')">-</button>
+    <button onclick="operator('*')">x</button>
+    <button onclick="operator('/')">:</button>
+    <button onclick="hitung()">=</button>
+    <button onclick="clearScreen()">C</button>
+
+    <script>
+      let nilai1 = "";
+      let nilai2 = "";
+      let opr = "";
+
+      function tambahAngka(angkaDariTombol) {
+        console.log(angkaDariTombol);
+        document.getElementById("screen").value += angkaDariTombol;
+      }
+
+      function operator(oprDariTombol) {
+        nilai1 = document.getElementById("screen").value;
+        opr = oprDariTombol;
+        document.getElementById("screen").value = "";
+      }
+
+      function hitung() {
+        nilai2 = document.getElementById("screen").value;
+        let hasil = 0;
+        switch (opr) {
+          case "+":
+            hasil = parseInt(nilai1) + parseInt(nilai2);
+            break;
+          case "-":
+            hasil = parseInt(nilai1) - parseInt(nilai2);
+            break;
+          case "*":
+            hasil = parseInt(nilai1) * parseInt(nilai2);
+            break;
+          case "/":
+            hasil = parseInt(nilai1) / parseInt(nilai2);
+            break;
+        }
+        console.log(hasil);
+        document.getElementById("screen").value = hasil;
+      }
+      function clearScreen() {
+        document.getElementById("screen").value = "";
+        let nilai1 = "";
+        let nilai2 = "";
+        let opr = "";
+      }
+    </script>
+  </body>
+</html>

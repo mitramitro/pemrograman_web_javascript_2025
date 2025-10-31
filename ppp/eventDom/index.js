@@ -1,0 +1,1 @@
+elemen.addEventListener("event", function);

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Latihan</h1>
+    <ul id="siswaContainer"></ul>
+    <script>
+      // buat object struktur data yang mempunyai key dan value
+      // akses Object dengan . kurung kotak, tambah properti baru
+      // destructuring ,ganti variabel , kasih default
+      // spread operator = menyalin atau menggabungkan object
+
+      //   let siswa = {
+      //     nama: "Budi",
+      //     kelas: "XI IPA ",
+      //   };
+
+      //   console.log(siswa.nama);
+      //   console.log(siswa["kelas"]);
+      //   siswa.alamat = "indramayu";
+      //   console.log(siswa.alamat);
+
+      //   let { nama, umur: usia = 2 } = siswa;
+      //   console.log(usia);
+
+      //   let sekolah = { namaSekolah: "SMA Negeri 1", alamat: "indramayu", ...siswa };
+      //   console.log(sekolah);
+
+      //array
+      //   bikin array
+      let buah = ["apel", "mangga", "salak"];
+      //akses array dengan kurung siku dan index
+      //akses semua data array - iterasi array dengan foreach
+      //   console.log(buah.length);
+      //   buah.forEach(function (item) {
+      //     console.log(item);
+      //   });
+
+      //   let siswa1 = { nama: "Budi", umur: 17 };
+      //   let siswa2 = { nama: "Ani", umur: 16 };
+      //   let siswa3 = { nama: "Cici", umur: 18 };
+      //   array of object
+      let siswa = [
+        { nama: "Budi", umur: 17 },
+        { nama: "Ani", umur: 16 },
+        { nama: "Cici", umur: 18 },
+      ];
+
+      let siswaContainer = document.getElementById("siswaContainer");
+
+      siswa.forEach(function (item) {
+        // console.log(`namanya ${item.nama} dan umurnya ${item.umur} tahun`);
+
+        siswaContainer.innerHTML += `<li>${item.nama}</>`;
+      });
+    </script>
+  </body>
+</html>

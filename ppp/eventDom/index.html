@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo DOM Event</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px;
+      }
+      #hasil {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demo DOM Event</h2>
+
+    <!-- Click & Double Click -->
+    <button id="btn1">Klik Saya</button>
+    <button id="btn2">Double Klik Saya</button>
+    <p id="clickResult"></p>
+
+    <!-- Keyup -->
+    <input id="inputText" placeholder="Ketik sesuatu..." />
+    <p id="textResult"></p>
+
+    <!-- Mouseover & Mouseout -->
+    <p id="hoverText">Arahkan mouse ke sini</p>
+
+    <script>
+      // click
+      document.getElementById("btn1").addEventListener("click", function () {
+        document.getElementById("clickResult").innerHTML = "Tombol diklik!";
+      });
+
+      // double click
+      document.getElementById("btn2").addEventListener("dblclick", function () {
+        document.getElementById("clickResult").innerHTML = "Tombol di-double klik!";
+      });
+
+      // keyup
+      const inputText = document.getElementById("inputText");
+      const textResult = document.getElementById("textResult");
+      inputText.addEventListener("keyup", function () {
+        textResult.innerHTML = "Kamu mengetik: " + inputText.value;
+      });
+
+      // mouseover & mouseout
+      const hoverText = document.getElementById("hoverText");
+      hoverText.addEventListener("mouseover", function () {
+        hoverText.style.color = "blue";
+        hoverText.innerHTML = "Mouse ada di atas saya!";
+      });
+      hoverText.addEventListener("mouseout", function () {
+        hoverText.style.color = "black";
+        hoverText.innerHTML = "Arahkan mouse ke sini";
+      });
+    </script>
+  </body>
+</html>

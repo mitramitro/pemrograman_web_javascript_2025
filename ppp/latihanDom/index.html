@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan dom</title>
+  </head>
+  <body>
+    <h1 id="judul">Halo Dunia!</h1>
+
+    <div id="container">
+      <h1 class="judul">Halo Dunia!</h1>
+      <p class="judul">Paragraf ini juga pakai class 'judul'</p>
+    </div>
+
+    <script>
+      document.getElementById("judul").innerText = "Selamat Datang!";
+
+      document.querySelector(".teks").innerText = "Isi teks baru!";
+    </script>
+
+    <!-- Manipulasi Class dan Style // Mengubah Warna -->
+    <p id="teks">Halo Dunia!</p>
+    <button onclick="ubahWarna()">Ubah Warna</button>
+
+    <script>
+      function ubahWarna() {
+        let elemen = document.getElementById("teks");
+        elemen.style.color = "blue"; // ubah warna jadi biru
+      }
+    </script>
+
+    <!-- menambah class  -->
+
+    <style>
+      .besar {
+        font-size: 32px;
+        color: green;
+      }
+    </style>
+
+    <p id="teks">Halo Dunia!</p>
+    <button onclick="tambahClass()">Tambah Class</button>
+
+    <script>
+      function tambahClass() {
+        let elemen = document.getElementById("teks");
+        elemen.classList.add("besar");
+      }
+    </script>
+
+    <!-- menghapus class  -->
+    <style>
+      .besar {
+        font-size: 32px;
+        color: green;
+      }
+    </style>
+
+    <p id="teks" class="besar">Halo Dunia!</p>
+    <button onclick="hapusClass()">Hapus Class</button>
+
+    <script>
+      function hapusClass() {
+        let elemen = document.getElementById("teks");
+        elemen.classList.remove("besar");
+      }
+    </script>
+
+    <!-- toggle class  -->
+    <style>
+      .besar {
+        font-size: 32px;
+        color: red;
+      }
+    </style>
+
+    <p id="teks">Halo Dunia!</p>
+    <button onclick="toggleClass()">Toggle Class</button>
+
+    <script>
+      function toggleClass() {
+        let elemen = document.getElementById("teks");
+        elemen.classList.toggle("besar");
+      }
+    </script>
+
+    <!-- sembunyikan tampilkan  -->
+    <p id="teks">Halo Dunia!</p>
+    <button onclick="sembunyikan()">Sembunyikan</button>
+    <button onclick="tampilkan()">Tampilkan</button>
+
+    <script>
+      function sembunyikan() {
+        document.getElementById("teks").style.display = "none";
+      }
+
+      function tampilkan() {
+        document.getElementById("teks").style.display = "block";
+      }
+    </script>
+
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan</title>
+  </head>
+  <body></body>
+
+  <script>
+    let siswa = {
+      nama: "Budi",
+      kelas: "XI IPA",
+      alamat: "Jakarta",
+    };
+
+    // console.log(siswa.nama);
+    // siswa.nohp = "083213123123";
+    // console.log(siswa.nohp);
+
+    // let { nama: namaLengkap, kelas, alamat } = siswa;
+    // console.log(namaLengkap);
+
+    // array
+    // let kelasIPA = ["budi", "iwan", "andi"];
+    // console.log(kelasIPA[2]);
+    // console.log(kelasIPA.length);
+
+    // array of object
+    let kelas = [
+      {
+        nama: "Budi",
+        kelas: "XI IPA",
+        alamat: "Jakarta",
+      },
+      { nama: "iwan", kelas: "XI IPA", alamat: "Cirebon" },
+      { nama: "andi", kelas: "XI IPA", alamat: "Indramayu" },
+    ];
+
+    // console.log(kelas[0].nama);
+    // console.log(kelas[0].kelas);
+    // console.log(kelas[0].alamat);
+    // console.log(kelas[1].nama);
+    // console.log(kelas[1].kelas);
+    // console.log(kelas[1].alamat);
+
+    kelas.forEach(function (item) {
+      console.log(item.nama);
+      console.log(item.kelas);
+      console.log(item.alamat);
+    });
+
+    const jsonData = JSON.stringify(kelas);
+
+    fetch("https://api.example.com/products", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: jsonData,
+    });
+  </script>
+</html>
